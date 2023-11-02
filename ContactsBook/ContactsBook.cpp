@@ -6,6 +6,12 @@
 
 #define MAX_LOADSTRING 100
 
+//* Дескрипроти елемеетів управління:
+HWND hList1, hList2;
+HWND hEdit1, hEdit2, hEdit3, hEdit4;
+HWND hButton1, hButton2, hButton3, hButton4;
+
+
 // Global Variables:
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
@@ -150,6 +156,30 @@ INT_PTR CALLBACK DlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     switch (message)
     {
     case WM_INITDIALOG:
+    {
+        // 1 - Initialisation of descriptors
+
+        hList1 = GetDlgItem(hDlg, IDC_LIST1);
+        hList2 = GetDlgItem(hDlg, IDC_LIST2);
+
+        hEdit1 = GetDlgItem(hDlg, IDC_EDIT1);
+        hEdit2 = GetDlgItem(hDlg, IDC_EDIT2);
+        hEdit3 = GetDlgItem(hDlg, IDC_EDIT3);
+        hEdit4 = GetDlgItem(hDlg, IDC_EDIT4);
+
+        hButton1 = GetDlgItem(hDlg, IDC_BUTTON1);
+        hButton2 = GetDlgItem(hDlg, IDC_BUTTON2);
+        hButton3 = GetDlgItem(hDlg, IDC_BUTTON3);
+        hButton4 = GetDlgItem(hDlg, IDC_BUTTON4);
+
+        // 2 Заповнення списку груп контактів
+        SendMessage(hList1, LB_ADDSTRING, 0, LPARAM(L"Робочі контакти"));
+        SendMessage(hList1, LB_ADDSTRING, 0, LPARAM(L"Сімейні контакти"));
+        SendMessage(hList1, LB_ADDSTRING, 0, LPARAM(L"Приватні контакти"));
+        SendMessage(hList1, LB_ADDSTRING, 0, LPARAM(L"Контакти сусідів"));
+        SendMessage(hList1, LB_ADDSTRING, 0, LPARAM(L"Контакти друзів"));
+
+        }
         return (INT_PTR)TRUE;
 
     case WM_COMMAND:
