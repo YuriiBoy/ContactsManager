@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Book.h" />
     <ClInclude Include="Contact.h" />
     <ClInclude Include="ContactsBook.h" />
     <ClInclude Include="framework.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Book.cpp" />
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="ContactsBook.cpp" />
     <ClCompile Include="Group.cpp" />
